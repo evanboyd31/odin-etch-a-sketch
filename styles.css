@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid-container {
     display: inline-grid;
     grid-template-columns: repeat(16, 35px [col-start]);
