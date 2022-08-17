@@ -1,0 +1,12 @@
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: repeat(16, 35px [col-start]);
+}
+
+.cell {
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    width: 35px;
+    height: 35px;
+}
