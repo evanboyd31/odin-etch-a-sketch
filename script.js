@@ -20,7 +20,7 @@ resizeButton.addEventListener('click', function (e) {
 
 function resize(size) {
     deleteCells();
-    let gridSize = Math.floor(720 / size);
+    let gridSize = Math.floor(640 / size);
     gridContainer.style.cssText = `grid-template-columns: repeat(${size}, ${gridSize}px [col-start]); grid-template-rows: repeat(${size}, ${gridSize}px [col-start])`;
     for (i = 0; i < size * size; i++) {
         let node = document.createElement("div");
