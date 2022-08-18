@@ -1,11 +1,40 @@
 const gridContainer = document.querySelector(".grid-container");
+const resizeButton = document.querySelector(".resize");
 
-for (i = 0; i < 256; i++) {
-    let node = document.createElement("div");
-    node.classList.add("cell");
-    node.onmouseover = function (event) {
-        let target = event.target;
-        target.style.background = 'black';
-    };
-    gridContainer.appendChild(node);
+resizeButton.addEventListener('click', function (e) {
+
+    while (true) {
+        let size = window.prompt("Please enter a new squares per side for the grid", "64");
+        if (size !== null || size !== "") {
+            size = Number(size);
+        }
+
+        if (size <= 100 && size >= 1) {
+            resize(size);
+            break;
+        }
+    }
+
+});
+
+
+function resize(size) {
+    deleteCells();
+    let gridSize = 560 / size;
+    gridContainer.style.cssText = `grid-template-columns: repeat(${size}, ${gridSize}px [col-start]); grid-template-rows: repeat(${size}, ${gridSize}px [col-start])`;
+    for (i = 0; i < size * size; i++) {
+        let node = document.createElement("div");
+        node.classList.add("cell");
+        node.onmouseover = function (event) {
+            let target = event.target;
+            target.style.background = 'black';
+        };
+        gridContainer.appendChild(node);
+    }
 }
+
+function deleteCells() {
+    gridContainer.replaceChildren();
+}
+
+resize(16)

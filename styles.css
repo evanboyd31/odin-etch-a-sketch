@@ -7,7 +7,10 @@ body {
 
 .grid-container {
     display: inline-grid;
+    max-width: 960px;
+    max-height: 960px;
     grid-template-columns: repeat(16, 35px [col-start]);
+    grid-template-rows: repeat(16, 35px [col-start]);
 }
 
 .cell {
