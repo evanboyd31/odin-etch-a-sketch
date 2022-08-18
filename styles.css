@@ -7,7 +7,6 @@ body {
 
 .grid-container {
     display: inline-grid;
-    gap: 1px;
     max-width: 960px;
     max-height: 960px;
     grid-template-columns: repeat(16, 45px [col-start]);
