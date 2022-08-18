@@ -20,10 +20,11 @@ resizeButton.addEventListener('click', function (e) {
 
 function resize(size) {
     deleteCells();
-    let gridSize = 560 / size;
+    let gridSize = Math.floor(720 / size);
     gridContainer.style.cssText = `grid-template-columns: repeat(${size}, ${gridSize}px [col-start]); grid-template-rows: repeat(${size}, ${gridSize}px [col-start])`;
     for (i = 0; i < size * size; i++) {
         let node = document.createElement("div");
+        node.style.cssText = `width: ${gridSize}px; height: ${gridSize}px`;
         node.classList.add("cell");
         node.onmouseover = function (event) {
             let target = event.target;
