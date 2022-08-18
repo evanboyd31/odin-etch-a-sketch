@@ -55,6 +55,6 @@ button {
     align-self: stretch;
     margin-bottom: auto;
     background-color: rgb(150, 150, 150);
-    margin: 8px;
+    margin: 8px 0px 0px 0px;
     padding: 16px;
 }
